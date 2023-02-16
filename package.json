@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "npx tsc",
+    "build:dev": "npx tsc -w",
+    "start": "node dist"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +30,7 @@
     "@types/inquirer": "^9.0.3",
     "@types/node": "^18.13.0",
     "chalk": "^5.2.0",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "inquirer": "^9.1.4",
     "lint-staged": "^13.1.2"
