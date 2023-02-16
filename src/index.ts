@@ -15,6 +15,13 @@ app.get("/things", (req, res) => {
   res.status(200).json({ thingsAlredyKnow });
 });
 
+app.get("/things/:idThing", (req, res) => {
+  const id = req.params.idThing;
+  const thing = thingsAlredyKnow.find((thing) => thing.id === +id);
+
+  res.status(200).json({ thing });
+});
+
 app.listen(port, () => {
   debug(chalk.bgGreen(`Start with server 'http://localhost:${port}'`));
 });
