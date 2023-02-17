@@ -16,14 +16,6 @@ app.use(express.json());
 
 app.use("/", thingsAlreadyKnowRouter);
 
-app.delete("/things/:idThing", (req: Request, res: Response) => {
-  const id = req.params.idThing;
-  const thingToDelete = thingsAlredyKnow.filter((thing) => thing.id !== +id);
-
-  debug(chalk.cyanBright(`You've delete the thing already know nº${id}`));
-  res.status(200).json({ thingToDelete });
-});
-
 app.post(
   "/things",
   (
