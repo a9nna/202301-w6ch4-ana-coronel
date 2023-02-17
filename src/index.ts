@@ -16,20 +16,6 @@ app.use(express.json());
 
 app.use("/", thingsAlreadyKnowRouter);
 
-app.get("/things", (req: Request, res: Response) => {
-  debug(chalk.cyanBright("You've got your things already know list"));
-  res.status(200).json({ thingsAlredyKnow });
-});
-
-app.get("/things/:idThing", (req: Request, res: Response) => {
-  const id = req.params.idThing;
-  const thingToGet = thingsAlredyKnow.find((thing) => thing.id === +id);
-
-  debug(chalk.cyanBright("You've got your thing already know"));
-
-  res.status(200).json({ thingToGet });
-});
-
 app.delete("/things/:idThing", (req: Request, res: Response) => {
   const id = req.params.idThing;
   const thingToDelete = thingsAlredyKnow.filter((thing) => thing.id !== +id);
