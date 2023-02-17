@@ -1,5 +1,6 @@
 import { Router } from "express";
 import {
+  addSingleThingAlreadyKnow,
   deleteSingleThingAlreadyKnow,
   getSingleThingAlreadyKnow,
   getThingsAlreadyKnow,
@@ -8,9 +9,7 @@ import {
 // eslint-disable-next-line new-cap
 export const thingsAlreadyKnowRouter = Router();
 
-thingsAlreadyKnowRouter.get("/things", getThingsAlreadyKnow);
-thingsAlreadyKnowRouter.get("/things/:idThing", getSingleThingAlreadyKnow);
-thingsAlreadyKnowRouter.delete(
-  "/things/:idThing",
-  deleteSingleThingAlreadyKnow
-);
+thingsAlreadyKnowRouter.get("/", getThingsAlreadyKnow);
+thingsAlreadyKnowRouter.get("/:idThing", getSingleThingAlreadyKnow);
+thingsAlreadyKnowRouter.delete("/:idThing", deleteSingleThingAlreadyKnow);
+thingsAlreadyKnowRouter.post("/", addSingleThingAlreadyKnow);
