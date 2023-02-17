@@ -11,3 +11,10 @@ export const getSingleThingAlreadyKnow = (req: Request, res: Response) => {
 
   res.status(200).json({ thingToGet });
 };
+
+export const deleteSingleThingAlreadyKnow = (req: Request, res: Response) => {
+  const id = req.params.idThing;
+  const thingToDelete = thingsAlredyKnow.filter((thing) => thing.id !== +id);
+
+  res.status(200).json({ thingToDelete });
+};
