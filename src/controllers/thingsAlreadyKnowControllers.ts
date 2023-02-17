@@ -1,5 +1,6 @@
 import { type Response, type Request } from "express";
 import thingsAlredyKnow from "../thingsAlreadyKnow.js";
+import { type ThingAlreadyKnowStructure } from "../types.js";
 
 export const getThingsAlreadyKnow = (req: Request, res: Response) => {
   res.status(200).json({ thingsAlredyKnow });
@@ -17,4 +18,18 @@ export const deleteSingleThingAlreadyKnow = (req: Request, res: Response) => {
   const thingToDelete = thingsAlredyKnow.filter((thing) => thing.id !== +id);
 
   res.status(200).json({ thingToDelete });
+};
+
+export const addSingleThingAlreadyKnow = (
+  req: Request<
+    Record<string, unknown>,
+    Record<string, unknown>,
+    ThingAlreadyKnowStructure
+  >,
+  res: Response
+) => {
+  const thingToAdd = req.body;
+  thingsAlredyKnow.push({ ...thingToAdd, id: Date.now() });
+
+  res.status(201).json({ thingsAlredyKnow });
 };
