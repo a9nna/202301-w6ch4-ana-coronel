@@ -1,4 +1,4 @@
-export interface ThingAlreadyKnow {
+export interface ThingAlreadyKnowStructure {
   id: number;
   area: string;
   thingAlredyKnow: string;

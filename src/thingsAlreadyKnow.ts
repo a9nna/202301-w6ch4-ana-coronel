@@ -1,6 +1,6 @@
-import { type ThingAlreadyKnow } from "./types";
+import { type ThingAlreadyKnowStructure } from "./types.js";
 
-const thingsAlredyKnow: ThingAlreadyKnow[] = [
+const thingsAlredyKnow: ThingAlreadyKnowStructure[] = [
   {
     id: 1,
     area: "sport",
