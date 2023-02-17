@@ -5,6 +5,7 @@ import createDebug from "debug";
 import chalk from "chalk";
 import thingsAlredyKnow from "./thingsAlreadyKnow.js";
 import { type ThingAlreadyKnowStructure } from "./types.js";
+import { thingsAlreadyKnowRouter } from "./routes/thingsAlreadyKnowRoutes.js";
 
 const app = express();
 const debug = createDebug("main-module");
@@ -12,6 +13,8 @@ const port = process.env.PORT ?? 4000;
 
 app.use(morgan("dev"));
 app.use(express.json());
+
+app.use("/", thingsAlreadyKnowRouter);
 
 app.get("/things", (req: Request, res: Response) => {
   debug(chalk.cyanBright("You've got your things already know list"));
