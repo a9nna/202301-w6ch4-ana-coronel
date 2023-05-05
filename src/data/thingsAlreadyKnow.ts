@@ -1,4 +1,4 @@
-import { type ThingAlreadyKnowStructure } from "./types.js";
+import { type ThingAlreadyKnowStructure } from "../types.js";
 
 const thingsAlredyKnow: ThingAlreadyKnowStructure[] = [
   {
